@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZERO-MERCY — Official Rulebook</title>
+<meta name="description" content="The official ZERO-MERCY organisational rulebook — conduct, gameplay, safety, privacy, staff rules, discipline and appeals. English and Hindi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Gujarati:wght@400&family=Noto+Sans+Gurmukhi:wght@400&family=Noto+Sans+Kannada:wght@400&family=Noto+Sans+Malayalam:wght@400&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans+Thai:wght@400&family=Noto+Sans+Hebrew:wght@400&family=Noto+Sans+JP:wght@400&family=Noto+Sans+KR:wght@400&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F19;
+  --bg-2:#0E1422;
+  --surface:rgba(255,255,255,.035);
+  --surface-2:rgba(255,255,255,.055);
+  --border:rgba(124,58,237,.22);
+  --border-soft:rgba(255,255,255,.07);
+  --text:#F3F4F6;
+  --muted:#9CA3AF;
+  --faint:#6B7280;
+  --violet:#7C3AED;
+  --blue:#3B82F6;
+  --grad:linear-gradient(135deg,#7C3AED 0%,#3B82F6 100%);
+  --danger:#F43F5E;
+  --warn:#F59E0B;
+  --ok:#10B981;
+  --r:16px;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Inter","Noto Sans","Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Tamil","Noto Sans Telugu","Noto Sans Gujarati","Noto Sans Gurmukhi","Noto Sans Kannada","Noto Sans Malayalam","Noto Sans Arabic","Noto Sans Thai","Noto Sans Hebrew","Noto Sans JP","Noto Sans KR","Noto Sans SC","Nirmala UI","Segoe UI",system-ui,sans-serif;
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:96px}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 12% -8%, rgba(124,58,237,.20), transparent 62%),
+    radial-gradient(760px 480px at 92% 4%, rgba(59,130,246,.16), transparent 60%),
+    radial-gradient(700px 700px at 50% 108%, rgba(124,58,237,.10), transparent 65%);
+}
+body::after{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%, #000 25%, transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 0%, #000 25%, transparent 78%);
+}
+.wrap{position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 24px}
+a{color:inherit}
+::selection{background:rgba(124,58,237,.4)}
+
+/* ---------- status bar ---------- */
+.statusbar{
+  background:#070A11; border-bottom:1px solid var(--border-soft);
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.12em;
+  color:var(--muted); text-transform:uppercase;
+}
+.statusbar .wrap{display:flex; align-items:center; gap:14px; height:34px; overflow:hidden}
+.blink{width:7px; height:7px; border-radius:50%; background:var(--danger); flex:none;
+  box-shadow:0 0 10px rgba(244,63,94,.9); animation:blink 1.6s steps(1,end) infinite}
+@keyframes blink{0%,55%{opacity:1}56%,100%{opacity:.15}}
+.statusbar .sep{color:rgba(255,255,255,.16)}
+.statusbar .right{margin-left:auto; display:flex; gap:14px; align-items:center}
+@media(max-width:760px){ .statusbar .right{display:none} }
+
+/* ---------- header ---------- */
+header.top{
+  position:sticky; top:0; z-index:40;
+  background:rgba(11,15,25,.72); backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid var(--border-soft);
+}
+header.top .wrap{display:flex; align-items:center; gap:18px; height:72px}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; flex:none}
+.brand img{height:34px; width:auto; filter:drop-shadow(0 0 14px rgba(244,63,94,.45))}
+.brand-txt{display:flex; flex-direction:column; line-height:1.15}
+.brand-txt b{font-size:1rem; letter-spacing:.14em; font-weight:700}
+.brand-txt span{font-family:var(--mono); font-size:.6rem; letter-spacing:.22em; color:var(--faint)}
+nav.main{margin-left:auto; display:flex; gap:4px; align-items:center}
+nav.main a{
+  font-size:.82rem; color:var(--muted); text-decoration:none; padding:8px 12px;
+  border-radius:9px; transition:.16s;
+}
+nav.main a:hover{color:var(--text); background:var(--surface-2)}
+@media(max-width:960px){ nav.main{display:none} }
+
+/* ---------- language pills ---------- */
+.lang{display:flex; align-items:center; gap:4px; padding:4px; border-radius:999px;
+  background:var(--surface); border:1px solid var(--border-soft); flex:none}
+.lang button{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.06em;
+  background:none; border:0; color:var(--muted); padding:6px 12px; border-radius:999px;
+  cursor:pointer; transition:.18s; white-space:nowrap;
+}
+.lang button:hover{color:var(--text)}
+.lang button.on{background:var(--grad); color:#fff; box-shadow:0 4px 18px rgba(124,58,237,.45)}
+.lang{position:relative}
+#langOpen{display:inline-flex; align-items:center; gap:6px; max-width:150px}
+#langCurrent{display:inline-block; max-width:104px; overflow:hidden; text-overflow:ellipsis;
+  white-space:nowrap; vertical-align:bottom}
+.globe{font-size:.9rem; line-height:1; opacity:.8}
+
+/* ---------- language modal ---------- */
+.langmodal{
+  position:fixed; inset:0; z-index:90; display:flex; align-items:flex-start;
+  justify-content:center; padding:8vh 16px 16px; background:rgba(5,8,14,.72);
+  backdrop-filter:blur(8px);
+}
+.langmodal[hidden]{display:none}
+.langmodal__panel{
+  width:min(720px,100%); max-height:78vh; display:flex; flex-direction:column;
+  background:rgba(14,20,34,.98); border:1px solid var(--border); border-radius:18px;
+  box-shadow:0 30px 90px rgba(0,0,0,.65); overflow:hidden;
+}
+.langmodal__head{
+  display:flex; gap:10px; align-items:center; padding:14px 16px;
+  border-bottom:1px solid var(--border-soft);
+}
+.langmodal__head input{
+  flex:1; background:var(--surface); border:1px solid var(--border-soft); border-radius:10px;
+  padding:11px 14px; color:var(--text); font-family:var(--sans); font-size:.92rem; outline:none;
+}
+.langmodal__head input:focus{border-color:rgba(124,58,237,.6)}
+#langClose{
+  background:var(--surface); border:1px solid var(--border-soft); color:var(--muted);
+  width:40px; height:40px; border-radius:10px; cursor:pointer; font-size:1rem;
+}
+#langClose:hover{color:var(--text); border-color:var(--border)}
+.langmodal__list{
+  overflow:auto; padding:10px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px;
+}
+.langmodal__list::-webkit-scrollbar{width:6px}
+.langmodal__list::-webkit-scrollbar-thumb{background:rgba(124,58,237,.4); border-radius:4px}
+.langmodal__list button{
+  text-align:left; background:none; border:1px solid transparent; color:var(--muted);
+  padding:9px 11px; border-radius:9px; cursor:pointer; font-family:var(--sans);
+  display:flex; flex-direction:column; gap:1px; line-height:1.35; min-width:0;
+}
+.langmodal__list button .n{
+  font-size:.95rem; font-weight:500; color:var(--text); font-family:var(--sans);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;
+}
+.langmodal__list button .e{
+  font-size:.68rem; color:var(--faint); font-family:var(--mono); letter-spacing:.04em;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;
+}
+.langmodal__list button[dir="rtl"] .n{text-align:right}
+.langmodal__list button:hover{background:var(--surface-2); color:var(--text); border-color:var(--border-soft)}
+.langmodal__list button.active{background:rgba(124,58,237,.18); color:var(--text); border-color:var(--border)}
+.langmodal__list button small{display:block; font-size:.68rem; color:var(--faint); font-family:var(--mono)}
+.langmodal__note{
+  margin:0; padding:10px 16px 14px; font-family:var(--mono); font-size:.63rem;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--faint);
+  border-top:1px solid var(--border-soft);
+}
+@media(max-width:720px){ .langmodal__list{grid-template-columns:1fr 1fr} }
+@media(max-width:460px){ .langmodal__list{grid-template-columns:1fr} }
+@media(max-width:600px){ .lang button{padding:6px 9px; font-size:.68rem} }
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 40px; position:relative}
+.kicker{
+  display:inline-flex; align-items:center; gap:9px; font-family:var(--mono);
+  font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+  border:1px solid var(--border); border-radius:999px; padding:7px 14px;
+  background:rgba(124,58,237,.08);
+}
+h1{
+  font-size:clamp(2.6rem,7vw,4.6rem); line-height:1.02; letter-spacing:-.035em;
+  margin:22px 0 18px; font-weight:700;
+}
+h1 .grad{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+.lead{font-size:1.08rem; color:var(--muted); max-width:68ch; margin:0 0 30px}
+.meta{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:30px}
+.meta div{
+  background:var(--surface); border:1px solid var(--border-soft); border-radius:12px;
+  padding:13px 15px; backdrop-filter:blur(10px); min-width:0;
+}
+.meta dt{font-family:var(--mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin:0 0 4px}
+.meta dd{margin:0; font-size:.84rem; color:var(--text); font-weight:500; overflow-wrap:anywhere}
+@media(max-width:860px){ .meta{grid-template-columns:1fr 1fr} }
+@media(max-width:520px){ .meta{grid-template-columns:1fr} }
+
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border-soft);
+  border:1px solid var(--border-soft); border-radius:var(--r); overflow:hidden}
+.stats div{background:rgba(14,20,34,.85); padding:18px 20px}
+.stats b{display:block; font-family:var(--mono); font-size:1.7rem; font-weight:700;
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+.stats span{font-size:.72rem; color:var(--faint); font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase}
+@media(max-width:720px){ .stats{grid-template-columns:1fr 1fr} }
+
+/* ---------- layout ---------- */
+.layout{display:grid; grid-template-columns:264px minmax(0,1fr); gap:34px; padding:20px 0 80px; align-items:start}
+@media(max-width:1020px){ .layout{grid-template-columns:1fr} }
+
+aside.toc{position:sticky; top:92px; max-height:calc(100vh - 120px); overflow:auto; padding-right:6px}
+aside.toc::-webkit-scrollbar{width:5px}
+aside.toc::-webkit-scrollbar-thumb{background:rgba(124,58,237,.35); border-radius:4px}
+.toc-title{font-family:var(--mono); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--faint); margin:0 0 12px}
+.toc a{
+  display:flex; gap:10px; align-items:baseline; text-decoration:none; color:var(--muted);
+  font-size:.83rem; padding:7px 10px; border-radius:9px; border-left:2px solid transparent;
+  transition:.15s; overflow-wrap:anywhere;
+}
+.toc a:hover{color:var(--text); background:var(--surface)}
+.toc a.on{color:var(--text); border-left-color:var(--violet); background:rgba(124,58,237,.10)}
+.toc a i{font-family:var(--mono); font-size:.66rem; color:var(--faint); font-style:normal; flex:none}
+@media(max-width:1020px){
+  aside.toc{position:static; max-height:none; display:flex; gap:8px; overflow-x:auto;
+    padding-bottom:8px; margin-bottom:6px}
+  .toc-title{display:none}
+  .toc a{white-space:nowrap; border-left:0; border-bottom:2px solid transparent; border-radius:8px}
+  .toc a.on{border-left:0; border-bottom-color:var(--violet)}
+}
+
+/* ---------- search ---------- */
+.searchbar{
+  display:flex; align-items:center; gap:10px; background:var(--surface);
+  border:1px solid var(--border-soft); border-radius:12px; padding:11px 14px; margin-bottom:22px;
+  backdrop-filter:blur(10px);
+}
+.searchbar svg{flex:none; opacity:.55}
+.searchbar input{
+  flex:1; background:none; border:0; outline:none; color:var(--text);
+  font-family:var(--sans); font-size:.92rem; min-width:0;
+}
+.searchbar input::placeholder{color:var(--faint)}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--surface); border:1px solid var(--border-soft); border-radius:var(--r);
+  padding:26px 28px; margin-bottom:16px; backdrop-filter:blur(14px);
+  position:relative; overflow:hidden;
+}
+.card::before{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:var(--r);
+  padding:1px; background:var(--grad); opacity:0; transition:opacity .25s;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+}
+.card:hover::before{opacity:.5}
+section.rule{scroll-margin-top:100px}
+.rule-head{display:flex; gap:16px; align-items:flex-start; margin-bottom:18px}
+.rule-num{
+  font-family:var(--mono); font-size:.72rem; font-weight:700; letter-spacing:.1em;
+  background:var(--grad); color:#fff; border-radius:9px; padding:6px 11px; flex:none;
+  box-shadow:0 4px 16px rgba(124,58,237,.35);
+}
+.rule-head h2{margin:0; font-size:1.22rem; letter-spacing:-.01em; line-height:1.35; font-weight:600}
+.rule-head p{margin:4px 0 0; font-family:var(--mono); font-size:.66rem; letter-spacing:.12em;
+  color:var(--faint); text-transform:uppercase}
+
+.blk{margin:0 0 22px}
+.blk:last-child{margin-bottom:0}
+.blk h3{
+  font-size:.95rem; font-weight:600; margin:0 0 10px; color:var(--text);
+  display:flex; gap:9px; align-items:baseline;
+}
+.blk h3 i{font-family:var(--mono); font-size:.72rem; color:var(--blue); font-style:normal}
+.blk p{margin:0 0 10px; color:var(--muted); font-size:.92rem}
+ul.clauses{list-style:none; margin:0; padding:0}
+ul.clauses li{
+  position:relative; padding:7px 0 7px 22px; color:var(--muted); font-size:.92rem;
+  border-bottom:1px solid rgba(255,255,255,.035);
+}
+ul.clauses li:last-child{border-bottom:0}
+ul.clauses li::before{
+  content:""; position:absolute; left:4px; top:17px; width:6px; height:6px;
+  border-radius:2px; background:var(--grad);
+}
+ul.clauses li.hit{background:rgba(124,58,237,.12); border-radius:6px; color:var(--text)}
+.hidden{display:none !important}
+.empty{color:var(--faint); font-size:.9rem; padding:10px 0}
+
+/* ---------- punishment table ---------- */
+table{width:100%; border-collapse:collapse; font-size:.9rem}
+thead th{
+  text-align:left; font-family:var(--mono); font-size:.64rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--faint); font-weight:500;
+  padding:10px 12px; border-bottom:1px solid var(--border-soft);
+}
+tbody td{padding:11px 12px; border-bottom:1px solid rgba(255,255,255,.035); color:var(--muted)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--surface-2)}
+td.n{font-family:var(--mono); color:var(--blue); width:52px}
+td.s{width:120px}
+.sev{font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:3px 9px; border-radius:999px; border:1px solid}
+.sev.low{color:var(--ok); border-color:rgba(16,185,129,.4); background:rgba(16,185,129,.08)}
+.sev.mid{color:var(--warn); border-color:rgba(245,158,11,.4); background:rgba(245,158,11,.08)}
+.sev.high{color:var(--danger); border-color:rgba(244,63,94,.4); background:rgba(244,63,94,.08)}
+
+/* ---------- faq ---------- */
+details.faq{
+  border:1px solid var(--border-soft); border-radius:12px; background:var(--surface);
+  margin-bottom:10px; padding:0 20px; backdrop-filter:blur(10px); transition:.2s;
+}
+details.faq[open]{background:var(--surface-2); border-color:var(--border)}
+details.faq summary{
+  cursor:pointer; list-style:none; padding:16px 0; font-weight:500; font-size:.95rem;
+  display:flex; justify-content:space-between; gap:14px; align-items:center;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+"; font-family:var(--mono); color:var(--blue); font-size:1.05rem; flex:none;
+}
+details.faq[open] summary::after{content:"–"}
+details.faq p{margin:0 0 18px; color:var(--muted); font-size:.9rem; max-width:78ch}
+
+/* ---------- callouts ---------- */
+.note{
+  display:grid; grid-template-columns:3px 1fr; gap:16px; background:rgba(124,58,237,.07);
+  border:1px solid var(--border); border-radius:12px; padding:16px 20px; margin:0 0 16px;
+}
+.note .bar{background:var(--grad); border-radius:3px}
+.note p{margin:0; color:var(--muted); font-size:.88rem}
+.note b{color:var(--text)}
+
+/* ---------- final ---------- */
+.final{
+  text-align:center; padding:44px 28px; border-radius:var(--r); margin:26px 0 0;
+  background:linear-gradient(160deg,rgba(124,58,237,.14),rgba(59,130,246,.07));
+  border:1px solid var(--border); backdrop-filter:blur(14px);
+}
+.final h2{font-size:1.5rem; margin:0 0 14px; letter-spacing:-.02em}
+.final p{color:var(--muted); max-width:70ch; margin:0 auto 12px; font-size:.95rem}
+.final .sig{margin-top:26px; font-family:var(--mono); font-size:.68rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--faint)}
+.final .motto{margin-top:8px; font-family:var(--mono); font-size:.8rem; letter-spacing:.18em;
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--border-soft); padding:34px 0 54px; margin-top:20px}
+footer .wrap{display:flex; gap:18px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+footer p{margin:0; font-size:.78rem; color:var(--faint); font-family:var(--mono)}
+footer a{color:var(--muted); text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.2)}
+
+/* ---------- misc ---------- */
+.reveal{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  .blink{animation:none}
+  html{scroll-behavior:auto}
+}
+.goog-te-banner-frame,.skiptranslate{display:none !important}
+body{top:0 !important}
+@media print{
+  body::before,body::after,header.top,.statusbar,aside.toc,.searchbar,.lang,footer .wrap a{display:none}
+  body{background:#fff; color:#000}
+  .card{border:1px solid #ddd; break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="statusbar">
+  <div class="wrap">
+    <span class="blink"></span>
+    <span id="statusLine" class="notranslate" translate="no">CLASSIFIED // ZERO-MERCY PROTOCOL ACTIVE</span>
+    <span class="sep">|</span>
+    <span>DOC-ZM-S1 · REV 1.0</span>
+    <span class="right">
+      <span id="footSeason">SEASON 1</span>
+      <span class="sep">|</span>
+      <span id="footUpdated">LAST UPDATED 05.11.2026</span>
+    </span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand notranslate" href="#top" translate="no">
+      <img src="data:image/png;base64,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" alt="ZERO-MERCY">
+      <span class="brand-txt">
+        <b>ZERO-MERCY</b>
+        <span id="brandSub">OFFICIAL RULEBOOK</span>
+      </span>
+    </a>
+    <nav class="main">
+      <a href="#rules" id="navRules">Rules</a>
+      <a href="#punishments" id="navPunish">Discipline</a>
+      <a href="#faq" id="navFaq">FAQ</a>
+      <a href="#contact" id="navContact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" class="on notranslate">EN</button>
+      <button data-lang="hi" class="notranslate">हिंदी</button>
+      <button id="langOpen" class="notranslate" aria-expanded="false">
+        <span class="globe" aria-hidden="true">◎</span> <span id="langCurrent">100+</span>
+      </button>
+    </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <section class="hero">
+      <span class="kicker" id="heroKicker">Season 1 · Official Rules &amp; Conduct Regulations</span>
+      <h1><span id="heroTitle"></span> <span class="grad" id="heroTitleGrad"></span></h1>
+      <p class="lead" id="heroLead"></p>
+
+      <dl class="meta">
+        <div><dt id="mOrg">Organisation</dt><dd>ZERO-MERCY</dd></div>
+        <div><dt id="mType">Document type</dt><dd id="mTypeV"></dd></div>
+        <div><dt id="mStatus">Status</dt><dd id="mStatusV"></dd></div>
+        <div><dt id="mApplies">Applies to</dt><dd id="mAppliesV"></dd></div>
+      </dl>
+
+      <div class="stats">
+        <div><b id="stSections">10</b><span id="stSectionsL">Sections</span></div>
+        <div><b id="stClauses">0</b><span id="stClausesL">Clauses</span></div>
+        <div><b>8</b><span id="stActionsL">Disciplinary actions</span></div>
+        <div><b>5</b><span id="stSeverityL">Zero-tolerance areas</span></div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <aside class="toc">
+        <p class="toc-title" id="tocTitle">Contents</p>
+        <div id="tocList"></div>
+      </aside>
+
+      <div>
+        <div class="searchbar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+          </svg>
+          <input id="search" type="search" autocomplete="off" placeholder="Search the rulebook">
+        </div>
+
+        <div id="rules"></div>
+
+        <section class="card rule reveal" id="punishments">
+          <div class="rule-head">
+            <span class="rule-num">§</span>
+            <div>
+              <h2 id="punishTitle">Disciplinary ladder</h2>
+              <p id="punishLead"></p>
+            </div>
+          </div>
+          <table>
+            <thead><tr><th>#</th><th id="thAction">Action</th><th id="thSev">Severity</th></tr></thead>
+            <tbody id="actionsBody"></tbody>
+          </table>
+        </section>
+
+        <section id="faq" style="scroll-margin-top:100px">
+          <div class="card rule reveal">
+            <div class="rule-head">
+              <span class="rule-num">?</span>
+              <div>
+                <h2 id="faqTitle">Frequently asked questions</h2>
+                <p id="faqLead"></p>
+              </div>
+            </div>
+            <div id="faqList"></div>
+          </div>
+        </section>
+
+        <section id="contact" style="scroll-margin-top:100px">
+          <div class="card rule reveal">
+            <div class="rule-head">
+              <span class="rule-num">@</span>
+              <div>
+                <h2 id="contactTitle">Appeals &amp; reporting</h2>
+                <p id="contactLead">Use the official channels only</p>
+              </div>
+            </div>
+            <div class="note"><div class="bar"></div><p id="noteAppeal"></p></div>
+            <div class="note"><div class="bar"></div><p id="noteReport"></p></div>
+            <div class="note"><div class="bar"></div><p id="noteSafety"></p></div>
+          </div>
+        </section>
+
+        <div class="final reveal">
+          <h2 id="finalTitle">Final declaration</h2>
+          <p id="finalText"></p>
+          <p class="motto notranslate" translate="no">ONE COMMUNITY. MULTIPLE GAMES. ENDLESS POSSIBILITIES.</p>
+          <p class="sig">ZERO-MERCY — OFFICIAL RULEBOOK · SEASON 1</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p id="footNote"></p>
+    <p class="notranslate" translate="no">© ZERO-MERCY · <a href="#top" id="backTop">Back to top</a></p>
+  </div>
+</footer>
+
+<div class="langmodal" id="langModal" hidden>
+  <div class="langmodal__panel" role="dialog" aria-modal="true" aria-label="Choose language">
+    <div class="langmodal__head">
+      <input id="langSearch" type="search" placeholder="Search language…" autocomplete="off">
+      <button id="langClose" aria-label="Close">✕</button>
+    </div>
+    <div class="langmodal__list" id="langList"></div>
+    <p class="langmodal__note" id="langNote">Machine translation · “ZERO-MERCY” always stays in English</p>
+  </div>
+</div>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+  function googleTranslateElementInit(){
+    new google.translate.TranslateElement({pageLanguage:'en', autoDisplay:false}, 'google_translate_element');
+    var tries = 0;
+    var iv = setInterval(function(){
+      var sel = document.querySelector('#google_translate_element select');
+      if(sel){
+        clearInterval(iv);
+        var saved = null;
+        try { saved = localStorage.getItem('zm-lang'); } catch(e){}
+        if(saved && saved !== 'en' && saved !== 'hi'){ sel.value = saved; sel.dispatchEvent(new Event('change')); }
+      }
+      if(++tries > 40) clearInterval(iv);
+    }, 250);
+  }
+  function gt(lang){
+    var sel = document.querySelector('#google_translate_element select');
+    if(!sel){ return false; }
+    sel.value = lang;
+    sel.dispatchEvent(new Event('change'));
+    return true;
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+
+<script>
+const DATA = {"sections": [{"code": "SECTION I", "title": "GENERAL CONDUCT & COMMUNICATION PROTOCOLS", "blocks": [{"h": "1.1 The Silence Over Drama Standard", "items": ["Unnecessary arguments, spam, meaningless messages and low-level trolling are prohibited.", "Do not engage with people attempting to provoke, bait or create unnecessary drama.", "Maintain dignity during disagreements. Silence and disengagement are often better than escalating a conflict.", "Members must not use ZERO-MERCY's name to start or continue public disputes."], "paras": ["ZERO-MERCY members are expected to maintain composure and professionalism in public channels and external communities."], "h_hi": "1.1 ड्रामा से ज्यादा शांति का मानक", "items_hi": ["गैर-जरूरी बहस, स्पैम, बिना मतलब के मैसेज और घटिया ट्रोलिंग की मनाही है।", "उकसाने, फंसाने या गैर-जरूरी ड्रामा करने वाले लोगों से उलझें नहीं।", "असहमति के दौरान भी मर्यादा बनाए रखें। विवाद बढ़ाने से बेहतर अक्सर चुप रहना और खुद को अलग कर लेना होता है।", "सदस्यों को सार्वजनिक विवाद शुरू करने या जारी रखने के लिए ZERO-MERCY के नाम का इस्तेमाल नहीं करना चाहिए।"], "paras_hi": ["ZERO-MERCY के सदस्यों से उम्मीद की जाती है कि वे सार्वजनिक चैनलों और बाहरी कम्युनिटी में संयम और प्रोफेशनलिज्म बनाए रखें।"]}, {"h": "1.2 Zero Tolerance for Low-Quality Communication", "items": ["Excessive or unnecessary pinging is prohibited.", "Toxic language, targeted insults, harassment and discriminatory remarks are not acceptable.", "Do not flood channels with repeated messages, reactions, images or advertisements.", "Use channels according to their designated purpose.", "Respect other members' time and communication boundaries."], "paras": [], "h_hi": "1.2 खराब क्वालिटी के संचार पर जीरो टॉलरेंस", "items_hi": ["जरूरत से ज्यादा या गैर-जरूरी पिंग करने की मनाही है।", "जहरीली भाषा, निजी तौर पर बेइज्जती, उत्पीड़न और भेदभाव भरे कमेंट बर्दाश्त नहीं किए जाएंगे।", "एक ही मैसेज, रिएक्शन, इमेज या विज्ञापनों से चैनलों को न भरें।", "चैनलों का इस्तेमाल उनके तय उद्देश्य के हिसाब से करें।", "दूसरे सदस्यों के समय और संचार की सीमाओं का सम्मान करें।"], "paras_hi": []}, {"h": "1.3 Respect & Professional Behaviour", "items": ["Treat every member with basic respect, regardless of rank, experience, skill or popularity.", "Bullying, intimidation, humiliation and targeted harassment are prohibited.", "Do not misuse another person's personal information.", "Disagreements must remain respectful and must not become personal attacks."], "paras": [], "h_hi": "1.3 सम्मान और पेशेवर व्यवहार", "items_hi": ["रैंक, अनुभव, कौशल या लोकप्रियता की परवाह किए बिना हर सदस्य का बुनियादी सम्मान करें।", "बदमाशी, डराना-धमकाना, अपमानित करना और टारगेट करके परेशान करना मना है।", "किसी दूसरे व्यक्ति की निजी जानकारी का गलत इस्तेमाल न करें।", "असहमति सम्मानजनक होनी चाहिए और यह निजी हमले में नहीं बदलनी चाहिए।"], "paras_hi": []}, {"h": "1.4 Organisational Hierarchy & Chain of Command", "items": ["Follow legitimate instructions issued by authorised leadership and staff.", "Do not impersonate founders, administrators or other officials.", "Organisational decisions should be discussed through the appropriate internal channels.", "Members may respectfully question decisions and submit grievances through official procedures.", "No staff member may use their rank to threaten, intimidate or silence legitimate complaints."], "paras": [], "h_hi": "1.4 संगठनात्मक पदानुक्रम और चेन ऑफ कमांड", "items_hi": ["अधिकृत लीडरशिप और स्टाफ द्वारा दिए गए वैध निर्देशों का पालन करें।", "संस्थापकों, प्रशासकों या अन्य अधिकारियों की नकल न करें।", "संगठनात्मक फैसलों पर उचित आंतरिक चैनलों के माध्यम से चर्चा की जानी चाहिए।", "सदस्य सम्मानपूर्वक फैसलों पर सवाल उठा सकते हैं और आधिकारिक प्रक्रियाओं के माध्यम से अपनी शिकायतें दर्ज कर सकते हैं।", "कोई भी स्टाफ सदस्य अपनी रैंक का इस्तेमाल वैध शिकायतों को डराने, धमकाने या दबाने के लिए नहीं कर सकता।"], "paras_hi": []}], "paras": [], "title_hi": "सामान्य आचरण और संचार प्रोटोकॉल", "paras_hi": []}, {"code": "SECTION II", "title": "GAMEPLAY, SCRIMS & PERFORMANCE STANDARDS", "blocks": [{"h": "2.1 Performance Over Presence", "items": ["A title, rank, gang tag or reputation does not automatically establish skill.", "Members should demonstrate ability through gameplay, teamwork, execution and discipline.", "False claims about achievements, rankings or competitive experience are prohibited.", "Respect the efforts and achievements of other players."], "paras": [], "h_hi": "2.1 उपस्थिति से ज्यादा परफॉरमेंस", "items_hi": ["कोई टाइटल, रैंक, गैंग टैग या प्रतिष्ठा अपने आप में कौशल साबित नहीं करती।", "सदस्यों को अपने गेमप्ले, टीम वर्क, निष्पादन और अनुशासन के माध्यम से अपनी क्षमता दिखानी चाहिए।", "उपलब्धियों, रैंकिंग या प्रतिस्पर्धी अनुभव के बारे में झूठे दावे करने की मनाही है।", "दूसरे खिलाड़ियों की मेहनत और उपलब्धियों का सम्मान करें।"], "paras_hi": []}, {"h": "2.2 Mandatory Event & Custom Participation", "items": ["Registered active-roster members are expected to attend officially scheduled mandatory events.", "Members must communicate in advance if they cannot attend.", "Genuine emergencies, technical problems and approved absences will be considered.", "Repeated unexplained absences may affect roster eligibility.", "Event participation requirements must be communicated before an event begins."], "paras": [], "h_hi": "2.2 अनिवार्य इवेंट और कस्टम पार्टिसिपेशन", "items_hi": ["रजिस्टर्ड एक्टिव-रोस्टर सदस्यों से उम्मीद की जाती है कि वे आधिकारिक तौर पर तय किए गए अनिवार्य इवेंट्स में शामिल हों।", "अगर सदस्य शामिल नहीं हो सकते हैं, तो उन्हें पहले ही बता देना चाहिए।", "असली आपात स्थिति, तकनीकी समस्याओं और मंजूर की गई अनुपस्थितियों को ध्यान में रखा जाएगा।", "बार-बार बिना वजह अनुपस्थित रहने से रोस्टर की पात्रता पर असर पड़ सकता है।", "इवेंट शुरू होने से पहले इवेंट में भाग लेने की शर्तें बता दी जानी चाहिए।"], "paras_hi": []}, {"h": "2.3 Match Conduct", "items": ["Harassment, personal insults and discriminatory remarks toward opponents are prohibited.", "Do not provoke opponents through abusive messages or repeated unwanted contact.", "Follow the rules and format of each custom match, scrim or tournament.", "Do not exploit bugs or use unauthorised software to gain an unfair advantage.", "Respect match hosts, referees and verified results."], "paras": [], "h_hi": "2.3 मैच का आचरण", "items_hi": ["विरोधियों को परेशान करना, निजी तौर पर बेइज्जत करना और भेदभाव भरे कमेंट करना मना है।", "गाली-गलौज वाले मैसेज या बार-बार अनचाहे संपर्क के जरिए विरोधियों को न भड़काएं।", "हर कस्टम मैच, स्क्रिम या टूर्नामेंट के नियमों और फॉर्मेट का पालन करें।", "अनुचित फायदा उठाने के लिए बग्स का फायदा न उठाएं या अनधिकृत सॉफ्टवेयर का इस्तेमाल न करें।", "मैच होस्ट्स, रेफरी और वेरिफाइड नतीजों का सम्मान करें।"], "paras_hi": []}, {"h": "2.4 Fair Play & Competitive Integrity", "items": ["Cheats, hacks, scripts and unauthorised modifications.", "Match fixing or deliberate manipulation of results.", "Fake screenshots or fabricated performance records.", "Unauthorised account sharing where prohibited by the game's rules.", "Deliberate disruption of official matches."], "paras": ["The following are prohibited:"], "h_hi": "2.4 निष्पक्ष खेल और प्रतिस्पर्धी अखंडता", "items_hi": ["चीट्स, हैक्स, स्क्रिप्ट और अनधिकृत बदलाव।", "मैच फिक्सिंग या नतीजों में जानबूझकर हेरफेर करना।", "नकली स्क्रीनशॉट या मनगढ़ंत परफॉरमेंस रिकॉर्ड।", "अनधिकृत अकाउंट शेयरिंग, जहां गेम के नियमों के अनुसार मना है।", "आधिकारिक मैचों में जानबूझकर बाधा डालना।"], "paras_hi": ["निम्नलिखित की मनाही है:"]}], "paras": [], "title_hi": "गेमप्ले, स्क्रिम्स और परफॉरमेंस स्टैंडर्ड्स", "paras_hi": []}, {"code": "SECTION III", "title": "VETTING & RECRUITMENT PROTOCOL", "blocks": [{"h": "3.1 Controlled Recruitment", "items": ["Entry into official competitive rosters and organisational positions may require an application, invitation or assessment.", "Recruitment decisions are based on conduct, reliability, skill and suitability for the relevant role.", "No applicant is guaranteed acceptance.", "Applicants must provide accurate information."], "paras": [], "h_hi": "3.1 नियंत्रित भर्ती", "items_hi": ["आधिकारिक प्रतिस्पर्धी रोस्टर और संगठनात्मक पदों में एंट्री के लिए आवेदन, निमंत्रण या मूल्यांकन की आवश्यकता हो सकती है।", "भर्ती के फैसले आचरण, विश्वसनीयता, कौशल और संबंधित भूमिका के लिए उपयुक्तता पर आधारित होते हैं।", "किसी भी आवेदक की स्वीकृति की गारंटी नहीं है।", "आवेदकों को सही जानकारी देनी चाहिए।"], "paras_hi": []}, {"h": "3.2 Evaluation & Observation", "items": ["Communication and teamwork.", "Behaviour under pressure.", "Gameplay performance, where relevant.", "Understanding of organisational rules.", "Reliability and commitment.", "Respect for other players and staff."], "paras": ["Applicants may be evaluated on:"], "h_hi": "3.2 मूल्यांकन और अवलोकन", "items_hi": ["संचार और टीम वर्क।", "दबाव में व्यवहार।", "गेमप्ले परफॉरमेंस, जहां प्रासंगिक हो।", "संगठनात्मक नियमों की समझ।", "विश्वसनीयता और प्रतिबद्धता।", "दूसरे खिलाड़ियों और स्टाफ का सम्मान।"], "paras_hi": ["आवेदकों का मूल्यांकन इन बातों पर किया जा सकता है:"]}, {"h": "3.3 Recruitment Integrity", "items": ["Fake identities, false achievements and misleading applications are prohibited.", "Bribery, threats or pressure to obtain a position are prohibited.", "No applicant may claim official membership before receiving confirmation.", "Recruitment assessments must be conducted fairly and consistently."], "paras": [], "h_hi": "3.3 भर्ती की अखंडता", "items_hi": ["नकली पहचान, झूठी उपलब्धियां और भ्रामक आवेदन मना हैं।", "पद पाने के लिए रिश्वत, धमकियां या दबाव बनाना मना है।", "कोई भी आवेदक पुष्टि मिलने से पहले आधिकारिक सदस्यता का दावा नहीं कर सकता।", "भर्ती के आकलन निष्पक्ष और लगातार तरीके से किए जाने चाहिए।"], "paras_hi": []}, {"h": "3.4 Confidentiality During Recruitment", "items": ["Do not share private interview questions, internal evaluation material or confidential recruitment discussions without authorisation.", "Do not publish another applicant's private information.", "Recruitment decisions must be communicated through authorised channels."], "paras": [], "h_hi": "3.4 भर्ती के दौरान गोपनीयता", "items_hi": ["बिना अनुमति के निजी इंटरव्यू के सवाल, आंतरिक मूल्यांकन सामग्री या गोपनीय भर्ती चर्चाओं को साझा न करें।", "किसी अन्य आवेदक की निजी जानकारी प्रकाशित न करें।", "भर्ती के फैसले अधिकृत चैनलों के माध्यम से बताए जाने चाहिए।"], "paras_hi": []}], "paras": [], "title_hi": "वैटिंग और भर्ती प्रोटोकॉल", "paras_hi": []}, {"code": "SECTION IV", "title": "SAFETY, HARASSMENT & ZERO-TOLERANCE CONTENT", "blocks": [{"h": "4.1 Child Safety & Sexual Exploitation", "items": ["Any sexual content involving minors.", "Child sexual abuse material (CSAM), including requesting, sharing, storing or distributing it.", "Grooming, sexual solicitation or attempts to exploit minors.", "Sexual threats, coercion or blackmail involving minors.", "Attempts to arrange sexual contact with minors.", "Sharing links or instructions intended to facilitate child exploitation."], "paras": ["ZERO-MERCY strictly prohibits all forms of child sexual exploitation and abuse.", "The following are strictly forbidden:", "Any suspected child sexual exploitation incident must be reported immediately to Discord and the appropriate authorities. Do not download, forward or redistribute suspected illegal material."], "h_hi": "4.1 बाल सुरक्षा और यौन शोषण", "items_hi": ["नाबालिगों से जुड़ा कोई भी यौन कंटेंट।", "बाल यौन शोषण सामग्री (CSAM), जिसमें इसे मांगना, साझा करना, स्टोर करना या बांटना शामिल है।", "ग्रूमिंग, यौन आग्रह या नाबालिगों का शोषण करने की कोशिश।", "नाबालिगों से जुड़ी यौन धमकियां, जबरदस्ती या ब्लैकमेल।", "नाबालिगों के साथ यौन संपर्क की व्यवस्था करने की कोशिश।", "बाल शोषण को बढ़ावा देने के इरादे से लिंक या निर्देश साझा करना।"], "paras_hi": ["ZERO-MERCY बच्चों के यौन शोषण और दुर्व्यवहार के सभी रूपों की सख्ती से मनाही करता है।", "निम्नलिखित की सख्त मनाही है:", "बच्चों के यौन शोषण की किसी भी संदिग्ध घटना की रिपोर्ट तुरंत Discord और संबंधित अधिकारियों को दी जानी चाहिए। संदिग्ध अवैध सामग्री को डाउनलोड, फॉरवर्ड या री-डिस्ट्रीब्यूट न करें।"]}, {"h": "4.2 Sexual Harassment & Explicit Content", "items": ["Unwanted sexual messages, comments or advances are prohibited.", "Sharing explicit images or videos without consent is prohibited.", "Sending unsolicited sexual content is prohibited.", "Sexual harassment, coercion and threats are prohibited.", "Explicit adult content is not permitted in ZERO-MERCY spaces."], "paras": [], "h_hi": "4.2 यौन उत्पीड़न और स्पष्ट कंटेंट", "items_hi": ["अनचाहे यौन मैसेज, कमेंट या इशारे मना हैं।", "सहमति के बिना स्पष्ट (explicit) इमेज या वीडियो साझा करने की मनाही है।", "बिना मांगे यौन कंटेंट भेजना मना है।", "यौन उत्पीड़न, जबरदस्ती और धमकियां मना हैं।", "ZERO-MERCY की जगहों पर स्पष्ट वयस्क कंटेंट की अनुमति नहीं है।"], "paras_hi": []}, {"h": "4.3 Hate, Threats & Discrimination", "items": ["Racism, religious hatred, caste-based abuse and other discriminatory conduct are prohibited.", "Threats of violence, targeted intimidation and stalking are prohibited.", "Encouraging harm against another person or group is prohibited.", "Doxxing and threats to expose private information are strictly prohibited."], "paras": [], "h_hi": "4.3 नफरत, धमकियां और भेदभाव", "items_hi": ["नस्लवाद, धार्मिक नफरत, जाति-आधारित दुर्व्यवहार और अन्य भेदभाव भरे आचरण की मनाही है।", "हिंसा की धमकियां, टारगेट करके डराना और पीछा करना (stalking) मना है।", "किसी दूसरे व्यक्ति या समूह को नुकसान पहुंचाने के लिए उकसाना मना है।", "डॉक्सिंग (doxxing) और निजी जानकारी उजागर करने की धमकियां सख्त मना हैं।"], "paras_hi": []}, {"h": "4.4 Self-Harm & Dangerous Content", "items": ["Do not encourage, glorify or pressure anyone into self-harm or dangerous challenges.", "Do not share instructions intended to harm people.", "Members should report content that creates an immediate safety concern."], "paras": [], "h_hi": "4.4 खुद को नुकसान पहुंचाना और खतरनाक कंटेंट", "items_hi": ["किसी को भी खुद को नुकसान पहुंचाने या खतरनाक चुनौतियों के लिए प्रोत्साहित न करें, न ही इसका महिमामंडन करें।", "लोगों को नुकसान पहुंचाने के इरादे से निर्देश साझा न करें।", "सदस्यों को उस कंटेंट की रिपोर्ट करनी चाहिए जिससे सुरक्षा को तुरंत खतरा हो।"], "paras_hi": []}, {"h": "4.5 Reporting Safety Incidents", "items": ["Report serious incidents through the official support or moderation system.", "Do not publicly expose victims, reporters or sensitive evidence.", "Staff must handle reports discreetly and escalate serious safety incidents appropriately.", "Retaliation against anyone who makes a good-faith report is prohibited."], "paras": [], "h_hi": "4.5 सुरक्षा घटनाओं की रिपोर्टिंग", "items_hi": ["गंभीर घटनाओं की रिपोर्ट आधिकारिक सपोर्ट या मॉडरेशन सिस्टम के माध्यम से करें।", "पीड़ितों, रिपोर्ट करने वालों या संवेदनशील सबूतों को सार्वजनिक रूप से उजागर न करें।", "स्टाफ को रिपोर्ट को गुप्त रूप से संभालना चाहिए और गंभीर सुरक्षा घटनाओं को उचित रूप से आगे बढ़ाना चाहिए।", "सद्भावना से रिपोर्ट करने वाले किसी भी व्यक्ति के खिलाफ बदला लेना मना है।"], "paras_hi": []}], "paras": [], "title_hi": "सुरक्षा, उत्पीड़न और जीरो-टॉलरेंस कंटेंट", "paras_hi": []}, {"code": "SECTION V", "title": "PRIVACY, SECURITY & CONFIDENTIALITY", "blocks": [{"h": "5.1 Personal Information Protection", "items": ["Never publish another member's real name, address, phone number, email, account credentials or private conversations without permission.", "Do not request passwords, authentication codes or recovery codes.", "Do not share private screenshots or recordings without appropriate consent.", "Members should avoid sharing sensitive personal information in public channels."], "paras": [], "h_hi": "5.1 पर्सनल इन्फॉर्मेशन प्रोटेक्शन", "items_hi": ["बिना परमिशन के किसी दूसरे मेंबर का असली नाम, पता, फोन नंबर, ईमेल, अकाउंट क्रेडेंशियल्स या प्राइवेट बातचीत कभी भी पब्लिश न करें।", "पासवर्ड, ऑथेंटिकेशन कोड या रिकवरी कोड की मांग न करें।", "बिना सही सहमति के प्राइवेट स्क्रीनशॉट या रिकॉर्डिंग शेयर न करें।", "मेंबर्स को पब्लिक चैनल्स में अपनी सेंसिटिव पर्सनल इन्फॉर्मेशन शेयर करने से बचना चाहिए।"], "paras_hi": []}, {"h": "5.2 Internal Confidentiality", "items": ["Internal strategies and operational plans.", "Private event arrangements and custom setups.", "Unpublished organisational decisions.", "Staff discussions and confidential reports.", "Private recruitment and disciplinary records.", "Security procedures and access credentials."], "paras": ["The following information must remain within authorised organisational channels:", "Unauthorised disclosure may result in disciplinary action, depending on the seriousness of the incident."], "h_hi": "5.2 इंटरनल कॉन्फिडेंशियलिटी", "items_hi": ["इंटरनल रणनीतियां और ऑपरेशनल प्लान।", "प्राइवेट इवेंट के इंतजाम और कस्टम सेटअप।", "पब्लिश न हुए ऑर्गेनाइजेशनल फैसले।", "स्टाफ की चर्चाएं और कॉन्फिडेंशियल रिपोर्ट्स।", "प्राइवेट रिक्रूटमेंट और अनुशासनात्मक रिकॉर्ड।", "सिक्योरिटी प्रोसीजर और एक्सेस क्रेडेंशियल्स।"], "paras_hi": ["नीचे दी गई जानकारी सिर्फ ऑथराइज्ड ऑर्गेनाइजेशनल चैनल्स के अंदर ही रहनी चाहिए:", "बिना परमिशन जानकारी लीक करने पर घटना की गंभीरता के हिसाब से अनुशासनात्मक कार्रवाई (disciplinary action) हो सकती है।"]}, {"h": "5.3 Account & Server Security", "items": ["Do not share Discord account credentials or bot tokens.", "Do not click suspicious links or download untrusted files.", "Do not impersonate official ZERO-MERCY accounts.", "Do not attempt to compromise accounts, bots or server infrastructure.", "Report suspicious activity to authorised staff."], "paras": [], "h_hi": "5.3 अकाउंट और सर्वर सिक्योरिटी", "items_hi": ["Discord अकाउंट क्रेडेंशियल्स या बॉट टोकन शेयर न करें।", "शक वाले लिंक्स पर क्लिक न करें या अनट्रस्टेड फाइल्स डाउनलोड न करें।", "ऑफिशियल ZERO-MERCY अकाउंट्स का दिखावा (impersonate) न करें।", "अकाउंट्स, बॉट्स या सर्वर इन्फ्रास्ट्रक्चर को हैक या कॉम्प्रोमाइज करने की कोशिश न करें।", "किसी भी शक वाली एक्टिविटी की रिपोर्ट ऑथराइज्ड स्टाफ को करें।"], "paras_hi": []}, {"h": "5.4 Recordings & Screenshots", "items": ["Do not record or publish private voice conversations without appropriate consent.", "Do not manipulate screenshots or recordings to falsely accuse another member.", "Evidence submitted in reports must not be altered or deliberately misrepresented."], "paras": [], "h_hi": "5.4 रिकॉर्डिंग्स और स्क्रीनशॉट", "items_hi": ["बिना सही सहमति के प्राइवेट वॉयस बातचीत को रिकॉर्ड या पब्लिश न करें।", "किसी दूसरे मेंबर पर झूठा इल्जाम लगाने के लिए स्क्रीनशॉट या रिकॉर्डिंग में हेरफेर न करें।", "रिपोर्ट्स में जमा किए गए सबूतों को बदला या जानबूझकर गलत तरीके से पेश नहीं किया जाना चाहिए।"], "paras_hi": []}], "paras": [], "title_hi": "प्राइवेसी, सिक्योरिटी और कॉन्फिडेंशियलिटी", "paras_hi": []}, {"code": "SECTION VI", "title": "STAFF, MODERATOR & ADMINISTRATION RULES", "blocks": [{"h": "6.1 Staff Responsibilities", "items": ["Act professionally and impartially.", "Follow the official rules and moderation procedures.", "Respond to assigned responsibilities within a reasonable time.", "Protect confidential information.", "Avoid unnecessary conflict with members.", "Escalate serious incidents to the appropriate authority."], "paras": ["All staff members must:"], "h_hi": "6.1 स्टाफ की जिम्मेदारियां", "items_hi": ["प्रोफेशनली और निष्पक्ष (impartially) तरीके से काम करना चाहिए।", "ऑफिशियल रूल्स और मॉडरेशन प्रोसीजर को फॉलो करना चाहिए।", "दी गई जिम्मेदारियों का ठीक समय पर जवाब देना चाहिए।", "कॉन्फिडेंशियल जानकारी को सुरक्षित रखना चाहिए।", "मेंबर्स के साथ बिना वजह विवाद करने से बचना चाहिए।", "गंभीर घटनाओं की रिपोर्ट सही अथॉरिटी को करनी चाहिए।"], "paras_hi": ["सभी स्टाफ मेंबर्स को:"]}, {"h": "6.2 Abuse of Authority", "items": ["Using permissions for personal revenge.", "Threatening members with administrative action.", "Issuing punishments without a legitimate reason.", "Deleting or hiding evidence to protect a friend.", "Misusing private information.", "Claiming authority beyond the assigned role."], "paras": ["The following are prohibited:"], "h_hi": "6.2 अथॉरिटी का गलत इस्तेमाल", "items_hi": ["पर्सनल बदले के लिए परमिशन का इस्तेमाल करना।", "मेंबर्स को एडमिनिस्ट्रेटिव एक्शन की धमकी देना।", "बिना किसी सही कारण के सजा देना।", "किसी दोस्त को बचाने के लिए सबूतों को डिलीट या छिपाना।", "प्राइवेट जानकारी का गलत इस्तेमाल करना।", "अपनी तय की गई रोल से बाहर अथॉरिटी दिखाना।"], "paras_hi": ["नीचे दी गई चीजें मना हैं:"]}, {"h": "6.3 Conflict of Interest", "items": ["Staff must disclose personal conflicts that may affect a moderation decision.", "A staff member should not independently investigate a complaint in which they are directly involved.", "Another authorised staff member should review serious complaints involving staff."], "paras": [], "h_hi": "6.3 कॉन्फ्लिक्ट ऑफ इंटरेस्ट", "items_hi": ["स्टाफ को अपने उन पर्सनल कॉन्फ्लिक्ट्स के बारे में बताना चाहिए जो मॉडरेशन के फैसले पर असर डाल सकते हैं।", "किसी स्टाफ मेंबर को उस शिकायत की खुद से जांच नहीं करनी चाहिए जिसमें वे सीधे तौर पर शामिल हों।", "स्टाफ से जुड़ी गंभीर शिकायतों की जांच किसी दूसरे ऑथराइज्ड स्टाफ मेंबर को करनी चाहिए।"], "paras_hi": []}, {"h": "6.4 Administrative Accountability", "items": ["Important moderation actions should have a recorded reason.", "Serious punishments should be supported by available evidence.", "Staff decisions may be reviewed by authorised leadership.", "Staff members are subject to the same conduct rules as ordinary members."], "paras": [], "h_hi": "6.4 एडमिनिस्ट्रेटिव अकाउंटेबिलिटी", "items_hi": ["मॉडरेशन के जरूरी कामों का कारण रिकॉर्ड में होना चाहिए।", "गंभीर सजाओं के लिए मौजूद सबूतों का सपोर्ट होना चाहिए।", "स्टाफ के फैसलों की जांच ऑथराइज्ड लीडरशिप कर सकती है।", "स्टाफ मेंबर्स को भी आम मेंबर्स वाले ही आचरण नियमों (conduct rules) का पालन करना होता है।"], "paras_hi": []}, {"h": "6.5 Inactivity & Role Review", "items": ["Staff members should communicate extended absences.", "Repeated failure to fulfil assigned responsibilities may lead to a role review.", "Promotions and removals should be based on performance, conduct and organisational needs."], "paras": [], "h_hi": "6.5 इनएक्टिविटी और रोल रिव्यू", "items_hi": ["स्टाफ मेंबर्स को अपनी लंबी गैरहाजिरी के बारे में बताना चाहिए।", "दी गई जिम्मेदारियों को बार-बार पूरा न कर पाने पर रोल रिव्यू हो सकता है।", "प्रमोशन और हटाने का फैसला परफॉरमेंस, आचरण और ऑर्गेनाइजेशन की जरूरतों के आधार पर होना चाहिए।"], "paras_hi": []}], "paras": [], "title_hi": "स्टाफ, मॉडरेटर और एडमिनिस्ट्रेशन रूल्स", "paras_hi": []}, {"code": "SECTION VII", "title": "ADVERTISING, SCAMS & PLATFORM ABUSE", "blocks": [{"h": "7.1 Unauthorised Advertising", "items": ["Unapproved server invitations, promotions and referral links are prohibited.", "Mass advertising and unsolicited promotional messages are not permitted.", "Partnerships and promotional campaigns require prior authorisation."], "paras": [], "h_hi": "7.1 अनऑथराइज्ड एडवरटाइजिंग", "items_hi": ["बिना अप्रूवल वाले सर्वर इनविटेशन, प्रमोशन और रेफरल लिंक्स मना हैं।", "एक साथ बहुत सारे एडवरटाइजमेंट और बिना मांगे प्रमोशनल मैसेज भेजने की इजाजत नहीं है।", "पार्टनरशिप और प्रमोशनल कैंपेन के लिए पहले से ऑथराइजेशन लेना जरूरी है।"], "paras_hi": []}, {"h": "7.2 Scams & Fraud", "items": ["Fake giveaways, phishing links and fraudulent offers are prohibited.", "Do not impersonate payment services, game developers or official organisations.", "Do not request money through deceptive claims.", "Report suspected scams immediately."], "paras": [], "h_hi": "7.2 स्कैम और फ्रॉड", "items_hi": ["फेक गिवअवे, फिशिंग लिंक्स और फ्रॉड वाले ऑफर्स मना हैं।", "पेमेंट सर्विस, गेम डेवलपर्स या ऑफिशियल ऑर्गेनाइजेशन का दिखावा न करें।", "झूठे दावों के जरिए पैसे न मांगें।", "किसी भी शक वाले स्कैम की तुरंत रिपोर्ट करें।"], "paras_hi": []}, {"h": "7.3 Raids & Disruption", "items": ["Coordinated spam, mass mentions and organised channel disruption are prohibited.", "Do not encourage raids against other Discord servers.", "Do not organise harassment campaigns against individuals or communities.", "Do not misuse bots or automated tools to disrupt services."], "paras": [], "h_hi": "7.3 रेड्स और डिस्टर्बेंस", "items_hi": ["एक साथ स्पैम करना, मास मेंशन करना और जानबूझकर चैनल को डिस्टर्ब करना मना है।", "दूसरे Discord सर्वर पर रेड्स को बढ़ावा न दें।", "किसी व्यक्ति या कम्युनिटी के खिलाफ हैरासमेंट कैंपेन न चलाएं।", "सर्विस को डिस्टर्ब करने के लिए बॉट्स या ऑटोमेटेड टूल्स का गलत इस्तेमाल न करें।"], "paras_hi": []}], "paras": [], "title_hi": "एडवरटाइजिंग, स्कैम और प्लेटफॉर्म का गलत इस्तेमाल", "paras_hi": []}, {"code": "SECTION VIII", "title": "EVENTS, REWARDS & HALL OF FAME", "blocks": [{"h": "8.1 Official Events", "items": ["Follow the published event rules and eligibility requirements.", "Event hosts must communicate schedules and requirements clearly.", "Participants must respect hosts, referees and other competitors.", "Event results must not be manipulated or falsely reported."], "paras": [], "h_hi": "8.1 ऑफिशियल इवेंट्स", "items_hi": ["पब्लिश किए गए इवेंट रूल्स और एलिजिबिलिटी की शर्तों को फॉलो करें।", "इवेंट होस्ट्स को शेड्यूल और जरूरतें साफ-साफ बतानी चाहिए।", "पार्टिसिपेंट्स को होस्ट्स, रेफरी और बाकी कॉम्पिटिटर्स की रिस्पेक्ट करनी चाहिए।", "इवेंट के नतीजों में हेरफेर नहीं की जानी चाहिए या उन्हें गलत तरीके से रिपोर्ट नहीं किया जाना चाहिए।"], "paras_hi": []}, {"h": "8.2 Rewards & Recognition", "items": ["Rewards are issued according to the published event conditions.", "Do not falsely claim a title, reward or championship.", "Staff must not secretly alter results to favour friends.", "Recognition may be withheld or reviewed if an achievement is found to be fraudulent."], "paras": [], "h_hi": "8.2 रिवॉर्ड्स और रिकग्निशन", "items_hi": ["रिवॉर्ड्स पब्लिश की गई इवेंट की शर्तों के हिसाब से दिए जाते हैं।", "किसी टाइटल, रिवॉर्ड या चैंपियनशिप का झूठा दावा न करें।", "स्टाफ को अपने दोस्तों को फायदा पहुंचाने के लिए छुपकर नतीजों में बदलाव नहीं करना चाहिए।", "अगर कोई उपलब्धि फ्रॉड निकली तो रिकग्निशन को रोका या रिव्यू किया जा सकता है।"], "paras_hi": []}, {"h": "8.3 Hall of Fame Integrity", "items": ["Only verified achievements may be officially inducted.", "Player names, handles, games, events and achievement records should be accurate.", "Corrections may be requested through official channels.", "Featured status is an editorial recognition and does not change a player's moderation privileges."], "paras": [], "h_hi": "8.3 हॉल ऑफ फेम की इंटीग्रिटी", "items_hi": ["सिर्फ वेरिफाइड उपलब्धियों को ही ऑफिशियली शामिल किया जा सकता है।", "प्लेयर के नाम, हैंडल, गेम्स, इवेंट्स और अचीवमेंट रिकॉर्ड एकदम सही होने चाहिए।", "सुधार के लिए ऑफिशियल चैनल्स के जरिए रिक्वेस्ट की जा सकती है।", "फीचर्ड स्टेटस एक एडिटोरियल रिकग्निशन है और इससे प्लेयर के मॉडरेशन प्रिविलेज नहीं बदलते हैं।"], "paras_hi": []}], "paras": [], "title_hi": "इवेंट्स, रिवॉर्ड्स और हॉल ऑफ फेम", "paras_hi": []}, {"code": "SECTION IX", "title": "DISCIPLINARY ACTION & APPEALS", "blocks": [{"h": "9.1 Available Actions", "items": ["1. Verbal reminder.", "2. Official warning.", "3. Temporary restriction.", "4. Timeout.", "5. Event or roster suspension.", "6. Temporary server ban.", "7. Permanent server ban.", "8. Staff or organisational role removal."], "paras": ["Depending on the severity and evidence, ZERO-MERCY may apply:"], "h_hi": "9.1 उपलब्ध कार्रवाई", "items_hi": ["1. मौखिक चेतावनी।", "2. आधिकारिक चेतावनी।", "3. अस्थायी प्रतिबंध।", "4. टाइमआउट।", "5. इवेंट या रोस्टर सस्पेंशन।", "6. अस्थायी सर्वर बैन।", "7. स्थायी सर्वर बैन।", "8. स्टाफ या संगठनात्मक पद से हटाना।"], "paras_hi": ["गंभीरता और सबूतों के आधार पर, ZERO-MERCY ये कार्रवाई कर सकता है:"]}, {"h": "9.2 Serious Violations", "items": [], "paras": ["Severe cases involving child exploitation, credible threats, doxxing, account compromise, serious harassment or organised attacks may result in immediate protective action, including permanent removal.", "A warning is not required before action in serious safety cases."], "h_hi": "9.2 गंभीर उल्लंघन", "items_hi": [], "paras_hi": ["बच्चों का शोषण, विश्वसनीय धमकियां, डॉक्सिंग, अकाउंट हैकिंग, गंभीर उत्पीड़न या संगठित हमलों जैसे गंभीर मामलों में तुरंत सुरक्षात्मक कार्रवाई की जा सकती है, जिसमें स्थायी निष्कासन भी शामिल है।", "गंभीर सुरक्षा मामलों में कार्रवाई करने से पहले चेतावनी देना जरूरी नहीं है।"]}, {"h": "9.3 Fair Enforcement", "items": ["Decisions should consider the severity, context, evidence and history of the incident.", "Similar cases should be treated consistently.", "Staff must not punish members based on personal dislike.", "False or deliberately malicious reports may themselves be reviewed."], "paras": [], "h_hi": "9.3 निष्पक्ष प्रवर्तन", "items_hi": ["फैसलों में घटना की गंभीरता, संदर्भ, सबूत और इतिहास को ध्यान में रखा जाना चाहिए।", "एक जैसे मामलों के साथ एक समान व्यवहार किया जाना चाहिए।", "स्टाफ को अपनी व्यक्तिगत नापसंदगी के आधार पर सदस्यों को दंडित नहीं करना चाहिए।", "झूठी या जानबूझकर की गई दुर्भावनापूर्ण रिपोर्टों की भी समीक्षा की जा सकती है।"], "paras_hi": []}, {"h": "9.4 Appeals", "items": ["Members may submit an appeal through the official support system.", "Appeals should include the relevant action and a clear explanation.", "An uninvolved authorised reviewer should handle appeals where possible.", "Appeals do not guarantee reversal of a decision.", "Safety restrictions may remain active during review."], "paras": [], "h_hi": "9.4 अपील", "items_hi": ["सदस्य आधिकारिक सपोर्ट सिस्टम के माध्यम से अपील कर सकते हैं।", "अपील में संबंधित कार्रवाई और स्पष्टीकरण शामिल होना चाहिए।", "जहां संभव हो, किसी निष्पक्ष अधिकृत समीक्षक को अपील संभालनी चाहिए।", "अपील से किसी फैसले के पलटने की गारंटी नहीं मिलती है।", "समीक्षा के दौरान सुरक्षा प्रतिबंध सक्रिय रह सकते हैं।"], "paras_hi": []}], "paras": [], "title_hi": "अनुशासनात्मक कार्रवाई और अपील", "paras_hi": []}, {"code": "SECTION X", "title": "OFFICIAL ORGANISATIONAL PRINCIPLES", "blocks": [], "paras": ["Every ZERO-MERCY member is expected to uphold these principles:", "DISCIPLINE — Maintain control over words and actions.", "INTEGRITY — Be honest about identity, achievements and conduct.", "RESPECT — Treat members, opponents and staff fairly.", "ACCOUNTABILITY — Accept responsibility for decisions and mistakes.", "CONFIDENTIALITY — Protect authorised internal information.", "FAIR PLAY — Compete through skill, teamwork and legitimate methods.", "SAFETY — Protect the community from harassment, exploitation and abuse."], "title_hi": "आधिकारिक संगठनात्मक सिद्धांत", "paras_hi": ["ZERO-MERCY के हर सदस्य से इन सिद्धांतों का पालन करने की उम्मीद की जाती है:", "अनुशासन — शब्दों और कार्यों पर नियंत्रण रखें।", "सत्यनिष्ठा — अपनी पहचान, उपलब्धियों और व्यवहार के बारे में ईमानदार रहें।", "सम्मान — सदस्यों, विरोधियों और स्टाफ के साथ निष्पक्ष व्यवहार करें।", "जवाबदेही — फैसलों और गलतियों की जिम्मेदारी स्वीकार करें।", "गोपनीयता — अधिकृत आंतरिक जानकारी की रक्षा करें।", "निष्पक्ष खेल — कौशल, टीम वर्क और वैध तरीकों से प्रतिस्पर्धा करें।", "सुरक्षा — समुदाय को उत्पीड़न, शोषण और दुर्व्यवहार से बचाएं।"]}, {"code": "FINAL", "title": "FINAL DECLARATION", "blocks": [], "paras": ["ZERO-MERCY is built on discipline, competitive integrity, mutual respect and a shared commitment to its community.", "Membership is a responsibility, not merely a title. Every member, regardless of rank, is expected to uphold these standards.", "No position grants immunity from the rules. No achievement excuses misconduct. No individual is above accountability.", "ONE COMMUNITY. MULTIPLE GAMES. ENDLESS POSSIBILITIES.", "ZERO-MERCY — OFFICIAL RULEBOOK | SEASON 1"], "title_hi": "अंतिम घोषणा", "paras_hi": ["ZERO-MERCY अनुशासन, प्रतिस्पर्धी सत्यनिष्ठा, आपसी सम्मान और अपने समुदाय के प्रति साझा प्रतिबद्धता पर बना है।", "सदस्यता एक जिम्मेदारी है, केवल एक पद नहीं। हर सदस्य से, चाहे उसका रैंक कुछ भी हो, इन मानकों का पालन करने की उम्मीद की जाती है।", "कोई भी पद नियमों से छूट नहीं देता। कोई भी उपलब्धि दुर्व्यवहार को सही नहीं ठहराती। कोई भी व्यक्ति जवाबदेही से ऊपर नहीं है।", "ONE COMMUNITY. MULTIPLE GAMES. ENDLESS POSSIBILITIES.", "ZERO-MERCY — OFFICIAL RULEBOOK | SEASON 1"]}], "ui": {"en": {"brand": "ZERO-MERCY", "sub": "OFFICIAL RULEBOOK", "status": "CLASSIFIED // ZERO-MERCY PROTOCOL ACTIVE", "nav_rules": "Rules", "nav_punish": "Discipline", "nav_faq": "FAQ", "nav_appeal": "Appeals", "nav_contact": "Contact", "hero_kicker": "Season 1 · Official Rules & Conduct Regulations", "hero_title": "The", "hero_title_grad": "Protocol", "hero_lead": "This document governs every member, player, staff member and leader of ZERO-MERCY. It is not a suggestion. Read it once, and you will never be surprised by a decision again.", "meta_org": "Organisation", "meta_type": "Document type", "meta_status": "Status", "meta_applies": "Applies to", "meta_type_v": "Community & organisational policy", "meta_status_v": "Active", "meta_applies_v": "All members, players, staff, moderators, admins and leadership", "stat_sections": "Sections", "stat_clauses": "Clauses", "stat_actions": "Disciplinary actions", "stat_severity": "Zero-tolerance areas", "search": "Search the rulebook — try “doxxing”, “appeal”, “advertising”…", "no_results": "No clause matches that search.", "toc": "Contents", "punish_title": "Disciplinary ladder", "punish_lead": "Action is chosen by severity, context, evidence and history — not by mood.", "faq_title": "Frequently asked questions", "faq_lead": "Straight answers, all taken from the rulebook above.", "final_title": "Final declaration", "appeal_title": "Appeals & reporting", "contact_title": "Contact", "foot_note": "Official version: English. Hindi translation provided for accessibility; in any conflict, the English text governs.", "foot_updated": "Last updated", "foot_season": "Season 1", "lang_label": "Language", "more_langs": "More languages", "clauses_word": "clauses", "back_top": "Back to top", "print": "Print / Save PDF"}, "hi": {"brand": "ZERO-MERCY", "sub": "आधिकारिक नियमावली", "status": "गोपनीय // ZERO-MERCY प्रोटोकॉल सक्रिय", "nav_rules": "नियम", "nav_punish": "अनुशासन", "nav_faq": "सामान्य प्रश्न", "nav_appeal": "अपील", "nav_contact": "संपर्क", "hero_kicker": "सीज़न 1 · आधिकारिक नियम और आचरण विनियम", "hero_title": "", "hero_title_grad": "प्रोटोकॉल", "hero_lead": "यह दस्तावेज़ ZERO-MERCY के हर सदस्य, खिलाड़ी, स्टाफ और लीडर पर लागू होता है। यह सिर्फ सलाह नहीं है। इसे एक बार पढ़ लो, फिर किसी फैसले पर हैरान नहीं होगे।", "meta_org": "संगठन", "meta_type": "दस्तावेज़ का प्रकार", "meta_status": "स्थिति", "meta_applies": "लागू होता है", "meta_type_v": "कम्युनिटी और संगठनात्मक नीति", "meta_status_v": "सक्रिय", "meta_applies_v": "सभी सदस्य, खिलाड़ी, स्टाफ, मॉडरेटर, एडमिन और लीडरशिप", "stat_sections": "सेक्शन", "stat_clauses": "क्लॉज़", "stat_actions": "अनुशासनात्मक कार्रवाई", "stat_severity": "ज़ीरो-टॉलरेंस क्षेत्र", "search": "नियमावली में खोजें — जैसे “डॉक्सिंग”, “अपील”, “विज्ञापन”…", "no_results": "इस खोज से कोई क्लॉज़ नहीं मिला।", "toc": "विषय-सूची", "punish_title": "अनुशासनात्मक सीढ़ी", "punish_lead": "कार्रवाई गंभीरता, संदर्भ, सबूत और इतिहास से तय होती है — मूड से नहीं।", "faq_title": "अक्सर पूछे जाने वाले प्रश्न", "faq_lead": "सीधे जवाब, सब ऊपर दी गई नियमावली से।", "final_title": "अंतिम घोषणा", "appeal_title": "अपील और रिपोर्टिंग", "contact_title": "संपर्क", "foot_note": "आधिकारिक संस्करण: अंग्रेज़ी। हिंदी अनुवाद सुविधा के लिए है; किसी भी अंतर की स्थिति में अंग्रेज़ी पाठ मान्य होगा।", "foot_updated": "अंतिम अपडेट", "foot_season": "सीज़न 1", "lang_label": "भाषा", "more_langs": "और भाषाएँ", "clauses_word": "क्लॉज़", "back_top": "ऊपर जाएँ", "print": "प्रिंट / PDF सेव करें"}}, "faq": [{"q_en": "What happens if I break a rule?", "q_hi": "नियम तोड़ने पर क्या होता है?", "a_en": "Action is chosen from the disciplinary ladder in Section 9.1 — from a verbal reminder up to a permanent ban. Severity, context, evidence and your history all count.", "a_hi": "कार्रवाई सेक्शन 9.1 की सीढ़ी से चुनी जाती है — मौखिक चेतावनी से लेकर स्थायी बैन तक। गंभीरता, संदर्भ, सबूत और आपका इतिहास, सब मायने रखते हैं।"}, {"q_en": "Do I always get a warning first?", "q_hi": "क्या हमेशा पहले चेतावनी मिलती है?", "a_en": "No. For serious safety cases — child exploitation, credible threats, doxxing, account compromise, organised attacks — protective action can be taken immediately, without a warning (Section 9.2).", "a_hi": "नहीं। गंभीर सुरक्षा मामलों में — बच्चों का शोषण, विश्वसनीय धमकियाँ, डॉक्सिंग, अकाउंट हैकिंग, संगठित हमले — बिना चेतावनी तुरंत सुरक्षात्मक कार्रवाई हो सकती है (सेक्शन 9.2)।"}, {"q_en": "How do I appeal a punishment?", "q_hi": "सज़ा के खिलाफ अपील कैसे करें?", "a_en": "Through the official support system. Include the action taken and a clear explanation. Where possible an uninvolved staff member reviews it. An appeal does not guarantee a reversal, and safety restrictions may stay active during review (Section 9.4).", "a_hi": "आधिकारिक सपोर्ट सिस्टम के ज़रिए। कार्रवाई और स्पष्ट कारण लिखें। जहाँ संभव हो, निष्पक्ष स्टाफ समीक्षा करता है। अपील से फैसला पलटने की गारंटी नहीं है, और समीक्षा के दौरान सुरक्षा प्रतिबंध लागू रह सकते हैं (सेक्शन 9.4)।"}, {"q_en": "Can I advertise my own server or channel?", "q_hi": "क्या मैं अपना सर्वर या चैनल प्रमोट कर सकता हूँ?", "a_en": "Not without prior authorisation. Unapproved invites, referral links, mass advertising and unsolicited promotion are prohibited. Partnerships need approval before anything is posted (Section 7.1).", "a_hi": "पहले अनुमति के बिना नहीं। बिना मंज़ूरी के इनवाइट, रेफ़रल लिंक, मास एडवरटाइज़िंग और अनचाहा प्रमोशन मना है। पार्टनरशिप के लिए पोस्ट करने से पहले मंज़ूरी ज़रूरी है (सेक्शन 7.1)।"}, {"q_en": "Someone is harassing me. What should I do?", "q_hi": "कोई मुझे परेशान कर रहा है, क्या करूँ?", "a_en": "Report it through the official moderation or support system instead of replying in public. Do not expose the person or the evidence publicly, and do not retaliate — retaliation against a good-faith report is itself a violation (Sections 4.5, 1.1).", "a_hi": "पब्लिक में जवाब देने के बजाय आधिकारिक मॉडरेशन या सपोर्ट सिस्टम से रिपोर्ट करें। व्यक्ति या सबूत पब्लिक में न डालें, और बदला न लें — सद्भावना से की गई रिपोर्ट के खिलाफ बदला लेना खुद नियम का उल्लंघन है (सेक्शन 4.5, 1.1)।"}, {"q_en": "Can staff punish me for personal reasons?", "q_hi": "क्या स्टाफ निजी कारणों से सज़ा दे सकता है?", "a_en": "No. Punishing without a legitimate reason, using permissions for revenge, threatening members with administrative action, or deleting evidence to protect a friend are all prohibited. Staff are subject to the same conduct rules as everyone else (Sections 6.2, 6.4).", "a_hi": "नहीं। बिना वैध कारण सज़ा देना, बदले के लिए परमिशन का इस्तेमाल, सदस्यों को एडमिन एक्शन की धमकी देना, या किसी दोस्त को बचाने के लिए सबूत मिटाना — सब मना है। स्टाफ पर भी वही आचरण नियम लागू हैं (सेक्शन 6.2, 6.4)।"}, {"q_en": "How do I get into the competitive roster?", "q_hi": "कॉम्पिटिटिव रोस्टर में कैसे आएँ?", "a_en": "Through an application, invitation or assessment. Selection looks at conduct, reliability, skill and suitability. No applicant is guaranteed acceptance, and false achievements or bribery end the process immediately (Sections 3.1–3.3).", "a_hi": "आवेदन, निमंत्रण या असेसमेंट के ज़रिए। चयन में आचरण, भरोसेमंदी, स्किल और उपयुक्तता देखी जाती है। किसी को स्वीकृति की गारंटी नहीं है, और झूठी उपलब्धियाँ या रिश्वत प्रक्रिया तुरंत खत्म कर देती है (सेक्शन 3.1–3.3)।"}, {"q_en": "What counts as cheating?", "q_hi": "चीटिंग में क्या आता है?", "a_en": "Cheats, hacks, scripts, unauthorised modifications, match fixing, fake screenshots, fabricated records, unauthorised account sharing and deliberately disrupting official matches (Section 2.4).", "a_hi": "चीट्स, हैक्स, स्क्रिप्ट्स, बिना अनुमति के मॉडिफिकेशन, मैच फिक्सिंग, नकली स्क्रीनशॉट, बनावटी रिकॉर्ड, बिना अनुमति अकाउंट शेयरिंग और आधिकारिक मैचों को जानबूझकर बिगाड़ना (सेक्शन 2.4)।"}, {"q_en": "Can I record voice calls or share screenshots?", "q_hi": "क्या वॉइस कॉल रिकॉर्ड कर सकते हैं या स्क्रीनशॉट शेयर कर सकते हैं?", "a_en": "Not private voice conversations without consent, and never edited screenshots used to falsely accuse someone. Evidence in reports must not be altered or misrepresented (Section 5.4).", "a_hi": "सहमति के बिना प्राइवेट वॉइस बातचीत नहीं, और किसी को झूठा फँसाने के लिए एडिट किए स्क्रीनशॉट कभी नहीं। रिपोर्ट में दिए सबूत बदले या तोड़े-मरोड़े नहीं जाने चाहिए (सेक्शन 5.4)।"}, {"q_en": "Is there an age requirement?", "q_hi": "क्या उम्र की कोई सीमा है?", "a_en": "Discord's own minimum age applies to everyone here. Separately, ZERO-MERCY has a zero-tolerance policy on any sexual content involving minors — it is reported to Discord and the authorities (Section 4.1).", "a_hi": "Discord की न्यूनतम उम्र यहाँ सब पर लागू है। इसके अलावा, नाबालिगों से जुड़े किसी भी यौन कंटेंट पर ZERO-MERCY की ज़ीरो-टॉलरेंस नीति है — इसकी रिपोर्ट Discord और अधिकारियों को की जाती है (सेक्शन 4.1)।"}, {"q_en": "Can I share someone's personal information?", "q_hi": "क्या किसी की निजी जानकारी शेयर कर सकते हैं?", "a_en": "Never without permission. Real names, addresses, phone numbers, emails, credentials, private conversations and doxxing are all covered — publishing or threatening to publish private information is strictly prohibited (Sections 5.1, 4.3).", "a_hi": "बिना अनुमति कभी नहीं। असली नाम, पता, फोन नंबर, ईमेल, क्रेडेंशियल, प्राइवेट बातचीत और डॉक्सिंग — सब इसके दायरे में हैं। निजी जानकारी पब्लिश करना या करने की धमकी देना सख्त मना है (सेक्शन 5.1, 4.3)।"}, {"q_en": "Why is the rulebook so strict?", "q_hi": "नियमावली इतनी सख्त क्यों है?", "a_en": "Because a competitive community runs on predictability. Members should know exactly what is allowed and what is not, and staff should apply the same standard to everyone — including themselves (Sections 6.4, 9.3).", "a_hi": "क्योंकि एक प्रतिस्पर्धी कम्युनिटी भरोसे और नियमितता पर चलती है। सदस्यों को पता होना चाहिए क्या allowed है और क्या नहीं, और स्टाफ को भी वही मानक सब पर लागू करना चाहिए — अपने आप पर भी (सेक्शन 6.4, 9.3)।"}], "actions": [{"en": "Verbal reminder", "hi": "मौखिक चेतावनी"}, {"en": "Official warning", "hi": "आधिकारिक चेतावनी"}, {"en": "Temporary restriction", "hi": "अस्थायी प्रतिबंध"}, {"en": "Timeout", "hi": "टाइमआउट"}, {"en": "Event / roster suspension", "hi": "इवेंट / रोस्टर सस्पेंशन"}, {"en": "Temporary server ban", "hi": "अस्थायी सर्वर बैन"}, {"en": "Permanent server ban", "hi": "स्थायी सर्वर बैन"}, {"en": "Staff / organisational role removal", "hi": "स्टाफ / संगठनात्मक पद से हटाना"}], "meta": ["ZERO-MERCY", "OFFICIAL ORGANISATIONAL RULEBOOK", "Season 1 | Official Rules & Conduct Regulations", "Organisation: ZERO-MERCY", "Document Type: Official Community & Organisational Policy", "Status: Active", "Applies To: All members, players, staff, moderators, administrators and leadership."]};
+let LANG = 'en';
+const $ = (s) => document.querySelector(s);
+const el = (t, c, h) => { const n = document.createElement(t); if(c) n.className = c; if(h !== undefined) n.innerHTML = h; return n; };
+const esc = (s) => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const BRAND = '<span class="notranslate" translate="no">ZERO-MERCY</span>';
+const fmt = (s) => esc(s).replace(/ZERO-MERCY/g, BRAND);
+
+function t(k){ const u = DATA.ui[LANG] || DATA.ui.en; return u[k] !== undefined ? u[k] : (DATA.ui.en[k] || k); }
+function pick(en, hi){ return LANG === 'hi' ? (hi || en) : en; }
+
+function buildTOC(){
+  const box = $('#tocList'); box.innerHTML = '';
+  DATA.sections.forEach((s, i) => {
+    const a = el('a', '', `<i>${s.code.replace('SECTION ','').replace('FINAL','END')}</i><span>${fmt(pick(s.title, s.title_hi))}</span>`);
+    a.href = '#sec-' + i;
+    a.dataset.target = 'sec-' + i;
+    box.appendChild(a);
+  });
+}
+
+function buildRules(){
+  const box = $('#rules'); box.innerHTML = '';
+  DATA.sections.forEach((s, i) => {
+    const card = el('section', 'card rule reveal');
+    card.id = 'sec-' + i;
+    const head = el('div', 'rule-head');
+    head.appendChild(el('span', 'rule-num', s.code.replace('SECTION ','').replace('FINAL','END')));
+    const hd = el('div');
+    hd.appendChild(el('h2', '', fmt(pick(s.title, s.title_hi))));
+    const n = s.blocks.reduce((a,b)=>a+b.items.length,0) + s.paras.length;
+    hd.appendChild(el('p', '', n + ' ' + t('clauses_word')));
+    head.appendChild(hd);
+    card.appendChild(head);
+
+    (s.paras || []).forEach(p => card.appendChild(el('p', '', fmt(pick(p, (s.paras_hi||[])[s.paras.indexOf(p)] || p)))));
+
+    s.blocks.forEach(b => {
+      const blk = el('div', 'blk');
+      const h = el('h3');
+      const m = String(b.h).match(/^([\d.]+)\s*(.*)$/);
+      if(m){ h.innerHTML = `<i>${m[1]}</i><span>${fmt(m[2])}</span>`; }
+      else { h.innerHTML = fmt(pick(b.h, b.h_hi)); }
+      blk.appendChild(h);
+      (b.paras||[]).forEach((p, k) => blk.appendChild(el('p', '', fmt(pick(p, (b.paras_hi||[])[k] || p)))));
+      if(b.items.length){
+        const ul = el('ul', 'clauses');
+        b.items.forEach((it, k) => ul.appendChild(el('li', '', fmt(pick(it, (b.items_hi||[])[k] || it)))));
+        blk.appendChild(ul);
+      }
+      card.appendChild(blk);
+    });
+    box.appendChild(card);
+  });
+}
+
+function buildActions(){
+  const sev = ['low','low','mid','mid','mid','high','high','high'];
+  const body = $('#actionsBody'); body.innerHTML = '';
+  DATA.actions.forEach((a, i) => {
+    const tr = el('tr');
+    tr.appendChild(el('td', 'n', String(i+1)));
+    tr.appendChild(el('td', '', fmt(pick(a.en, a.hi))));
+    const cls = sev[i];
+    const label = {low:'Low', mid:'Medium', high:'Severe'}[cls];
+    const labelHi = {low:'हल्का', mid:'मध्यम', high:'गंभीर'}[cls];
+    tr.appendChild(el('td', 's', `<span class="sev ${cls}">${LANG==='hi'?labelHi:label}</span>`));
+    body.appendChild(tr);
+  });
+}
+
+function buildFAQ(){
+  const box = $('#faqList'); box.innerHTML = '';
+  DATA.faq.forEach(f => {
+    const d = el('details', 'faq');
+    d.appendChild(el('summary', '', fmt(pick(f.q_en, f.q_hi))));
+    d.appendChild(el('p', '', fmt(pick(f.a_en, f.a_hi))));
+    box.appendChild(d);
+  });
+}
+
+function setText(id, val){
+  const n = document.getElementById(id);
+  if(!n) return;
+  if(/ZERO-MERCY/.test(String(val))) n.innerHTML = fmt(val); else n.textContent = val;
+}
+
+function applyLang(){
+  document.documentElement.lang = LANG === 'hi' ? 'hi' : 'en';
+  markLangActive(LANG);
+
+  setText('brandSub', t('sub'));
+  setText('statusLine', t('status'));
+  setText('navRules', t('nav_rules'));
+  setText('navPunish', t('nav_punish'));
+  setText('navFaq', t('nav_faq'));
+  setText('navContact', t('contact_title'));
+  setText('heroKicker', t('hero_kicker'));
+  setText('heroTitle', t('hero_title')); setText('heroTitleGrad', t('hero_title_grad'));
+  setText('heroLead', t('hero_lead'));
+  setText('mOrg', t('meta_org')); setText('mType', t('meta_type'));
+  setText('mStatus', t('meta_status')); setText('mApplies', t('meta_applies'));
+  setText('mTypeV', t('meta_type_v')); setText('mStatusV', t('meta_status_v'));
+  setText('mAppliesV', t('meta_applies_v'));
+  setText('stSectionsL', t('stat_sections')); setText('stClausesL', t('stat_clauses'));
+  setText('stActionsL', t('stat_actions')); setText('stSeverityL', t('stat_severity'));
+  setText('tocTitle', t('toc'));
+  setText('punishTitle', t('punish_title')); setText('punishLead', t('punish_lead'));
+  setText('thAction', LANG==='hi'?'कार्रवाई':'Action');
+  setText('thSev', LANG==='hi'?'गंभीरता':'Severity');
+  setText('faqTitle', t('faq_title')); setText('faqLead', t('faq_lead'));
+  setText('contactTitle', t('appeal_title'));
+  setText('contactLead', LANG==='hi'?'सिर्फ आधिकारिक चैनल इस्तेमाल करें':'Use the official channels only');
+  setText('finalTitle', t('final_title'));
+  setText('footNote', t('foot_note'));
+  setText('backTop', t('back_top'));
+  setText('footSeason', t('foot_season'));
+
+  $('#search').placeholder = t('search');
+
+  const fin = DATA.sections[DATA.sections.length - 1];
+  setText('finalText', pick(fin.paras[0] || '', (fin.paras_hi || [])[0] || ''));
+  setText('noteAppeal', LANG==='hi'
+    ? 'अपील आधिकारिक सपोर्ट सिस्टम से करें। कार्रवाई और स्पष्ट कारण लिखें। जहाँ संभव हो, निष्पक्ष स्टाफ समीक्षा करता है — पर अपील से फैसला पलटने की गारंटी नहीं है (सेक्शन 9.4)।'
+    : 'Submit appeals through the official support system with the action taken and a clear explanation. An uninvolved staff member reviews where possible — an appeal does not guarantee a reversal (Section 9.4).');
+  setText('noteReport', LANG==='hi'
+    ? 'गंभीर घटनाओं की रिपोर्ट आधिकारिक मॉडरेशन या सपोर्ट सिस्टम से करें। पीड़ितों, रिपोर्ट करने वालों या सबूतों को पब्लिक में न डालें (सेक्शन 4.5)।'
+    : 'Report serious incidents through the official moderation or support system. Do not publicly expose victims, reporters or sensitive evidence (Section 4.5).');
+  setText('noteSafety', LANG==='hi'
+    ? 'बच्चों से जुड़े यौन शोषण का कोई भी संदेह तुरंत Discord और संबंधित अधिकारियों को रिपोर्ट करें। संदिग्ध सामग्री डाउनलोड, फॉरवर्ड या शेयर न करें (सेक्शन 4.1)।'
+    : 'Any suspected child sexual exploitation must be reported immediately to Discord and the appropriate authorities. Do not download, forward or redistribute suspected illegal material (Section 4.1).');
+
+  buildTOC(); buildRules(); buildActions(); buildFAQ();
+  $('#stClauses').textContent = document.querySelectorAll('ul.clauses li').length;
+  wireSearch();
+  wireReveal();
+}
+
+function wireSearch(){
+  const input = $('#search');
+  const cards = [...document.querySelectorAll('#rules .card')];
+  input.oninput = () => {
+    const q = input.value.trim().toLowerCase();
+    cards.forEach(card => {
+      let any = false;
+      card.querySelectorAll('ul.clauses li, .blk p, .rule-head h2').forEach(n => {
+        const hit = q.length > 1 && n.textContent.toLowerCase().includes(q);
+        n.classList.toggle('hit', hit);
+        if(hit) any = true;
+      });
+      if(q.length > 1){
+        card.classList.toggle('hidden', !any);
+        card.querySelectorAll('.blk').forEach(b => {
+          const inner = b.textContent.toLowerCase();
+          b.classList.toggle('hidden', !inner.includes(q));
+        });
+      } else {
+        card.classList.remove('hidden');
+        card.querySelectorAll('.blk, li').forEach(n => n.classList.remove('hidden'));
+      }
+    });
+  };
+}
+
+let io;
+function wireReveal(){
+  if(!('IntersectionObserver' in window)) return;
+  if(io) io.disconnect();
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+
+  const spy = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if(e.isIntersecting){
+        const id = e.target.id;
+        document.querySelectorAll('.toc a').forEach(a => a.classList.toggle('on', a.dataset.target === id));
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('#rules .card').forEach(n => spy.observe(n));
+}
+
+const LANGS = [
+["af","Afrikaans","Afrikaans"],["sq","Shqip","Albanian"],["am","አማርኛ","Amharic"],["ar","العربية","Arabic"],
+["hy","Հայերեն","Armenian"],["as","অসমীয়া","Assamese"],["ay","Aymar aru","Aymara"],["az","Azərbaycan","Azerbaijani"],
+["bm","Bamanankan","Bambara"],["eu","Euskara","Basque"],["be","Беларуская","Belarusian"],["bn","বাংলা","Bengali"],
+["bho","भोजपुरी","Bhojpuri"],["bs","Bosanski","Bosnian"],["bg","Български","Bulgarian"],["ca","Català","Catalan"],
+["ceb","Cebuano","Cebuano"],["ny","Chichewa","Chichewa"],["zh-CN","简体中文","Chinese (Simplified)"],
+["zh-TW","繁體中文","Chinese (Traditional)"],["co","Corsu","Corsican"],["hr","Hrvatski","Croatian"],["cs","Čeština","Czech"],
+["da","Dansk","Danish"],["dv","ދިވެހި","Dhivehi"],["doi","डोगरी","Dogri"],["nl","Nederlands","Dutch"],
+["en","English","English"],["eo","Esperanto","Esperanto"],["et","Eesti","Estonian"],["ee","Eʋegbe","Ewe"],
+["tl","Filipino","Filipino"],["fi","Suomi","Finnish"],["fr","Français","French"],["fy","Frysk","Frisian"],
+["gl","Galego","Galician"],["ka","ქართული","Georgian"],["de","Deutsch","German"],["el","Ελληνικά","Greek"],
+["gn","Avañe'ẽ","Guarani"],["gu","ગુજરાતી","Gujarati"],["ht","Kreyòl ayisyen","Haitian Creole"],["ha","Hausa","Hausa"],
+["haw","ʻŌlelo Hawaiʻi","Hawaiian"],["he","עברית","Hebrew"],["hi","हिन्दी","Hindi"],["hmn","Hmoob","Hmong"],
+["hu","Magyar","Hungarian"],["is","Íslenska","Icelandic"],["ig","Igbo","Igbo"],["ilo","Ilokano","Ilocano"],
+["id","Indonesia","Indonesian"],["ga","Gaeilge","Irish"],["it","Italiano","Italian"],["ja","日本語","Japanese"],
+["jv","Basa Jawa","Javanese"],["kn","ಕನ್ನಡ","Kannada"],["kk","Қазақ","Kazakh"],["km","ខ្មែរ","Khmer"],
+["rw","Ikinyarwanda","Kinyarwanda"],["gom","कोंकणी","Konkani"],["ko","한국어","Korean"],["kri","Krio","Krio"],
+["ku","Kurdî","Kurdish (Kurmanji)"],["ckb","کوردی","Kurdish (Sorani)"],["ky","Кыргызча","Kyrgyz"],["lo","ລາວ","Lao"],
+["la","Latina","Latin"],["lv","Latviešu","Latvian"],["ln","Lingála","Lingala"],["lt","Lietuvių","Lithuanian"],
+["lg","Luganda","Luganda"],["lb","Lëtzebuergesch","Luxembourgish"],["mk","Македонски","Macedonian"],
+["mai","मैथिली","Maithili"],["mg","Malagasy","Malagasy"],["ms","Bahasa Melayu","Malay"],["ml","മലയാളം","Malayalam"],
+["mt","Malti","Maltese"],["mi","Māori","Maori"],["mr","मराठी","Marathi"],["mni","মৈতৈলোন্","Meiteilon (Manipuri)"],
+["lus","Mizo ṭawng","Mizo"],["mn","Монгол","Mongolian"],["my","မြန်မာ","Myanmar (Burmese)"],["ne","नेपाली","Nepali"],
+["no","Norsk","Norwegian"],["or","ଓଡ଼ିଆ","Odia"],["om","Oromoo","Oromo"],["ps","پښتو","Pashto"],["fa","فارسی","Persian"],
+["pl","Polski","Polish"],["pt","Português","Portuguese"],["pa","ਪੰਜਾਬੀ","Punjabi"],["qu","Runasimi","Quechua"],
+["ro","Română","Romanian"],["ru","Русский","Russian"],["sm","Gagana Sāmoa","Samoan"],["sa","संस्कृतम्","Sanskrit"],
+["gd","Gàidhlig","Scots Gaelic"],["nso","Sepedi","Sepedi"],["sr","Српски","Serbian"],["st","Sesotho","Sesotho"],
+["sn","chiShona","Shona"],["sd","سنڌي","Sindhi"],["si","සිංහල","Sinhala"],["sk","Slovenčina","Slovak"],
+["sl","Slovenščina","Slovenian"],["so","Soomaali","Somali"],["es","Español","Spanish"],["su","Basa Sunda","Sundanese"],
+["sw","Kiswahili","Swahili"],["sv","Svenska","Swedish"],["tg","Тоҷикӣ","Tajik"],["ta","தமிழ்","Tamil"],
+["tt","Татарча","Tatar"],["te","తెలుగు","Telugu"],["th","ไทย","Thai"],["ti","ትግርኛ","Tigrinya"],
+["ts","Xitsonga","Tsonga"],["tr","Türkçe","Turkish"],["tk","Türkmen","Turkmen"],["uk","Українська","Ukrainian"],
+["ur","اردو","Urdu"],["ug","ئۇيغۇرچە","Uyghur"],["uz","Oʻzbek","Uzbek"],["vi","Tiếng Việt","Vietnamese"],
+["cy","Cymraeg","Welsh"],["xh","isiXhosa","Xhosa"],["yi","ייִדיש","Yiddish"],["yo","Yorùbá","Yoruba"],["zu","isiZulu","Zulu"]
+];
+
+const RTL = new Set(['ar','he','ur','fa','ps','sd','ug','yi','dv','ckb']);
+let gtActive = false;
+let currentLang = {code:'en', native:'English'};
+const LS_KEY = 'zm-lang';
+
+function markLangActive(code){
+  document.querySelectorAll('.lang button').forEach(b => b.classList.remove('on'));
+  if(code === 'en' || code === 'hi'){
+    const b = document.querySelector(`.lang button[data-lang="${code}"]`);
+    if(b) b.classList.add('on');
+    document.getElementById('langCurrent').textContent = '100+';
+  } else {
+    document.getElementById('langOpen').classList.add('on');
+  }
+}
+
+function gtReady(){
+  const sel = document.querySelector('#google_translate_element select');
+  return !!sel;
+}
+
+function gt(lang){
+  const sel = document.querySelector('#google_translate_element select');
+  if(!sel) return false;
+  sel.value = lang;
+  sel.dispatchEvent(new Event('change'));
+  gtActive = lang !== 'en';
+  return true;
+}
+
+const modal = () => document.getElementById('langModal');
+
+function renderLangList(q){
+  const box = document.getElementById('langList');
+  const term = (q || '').trim().toLowerCase();
+  box.innerHTML = '';
+  LANGS.filter(l => !term || l[1].toLowerCase().includes(term) || l[2].toLowerCase().includes(term) || l[0].toLowerCase() === term)
+    .forEach(l => {
+      const b = el('button', currentLang.code === l[0] ? 'active' : '');
+      if(RTL.has(l[0])) b.setAttribute('dir','rtl');
+      b.innerHTML = `<span class="n">${esc(l[1])}</span><span class="e">${esc(l[2])}</span>`;
+      b.onclick = () => pickLang(l[0], l[1]);
+      box.appendChild(b);
+    });
+  if(!box.children.length) box.appendChild(el('p', 'empty', 'No language matches that search.'));
+}
+
+function openLang(){
+  const m = modal(); m.hidden = false;
+  document.getElementById('langOpen').setAttribute('aria-expanded','true');
+  const inp = document.getElementById('langSearch');
+  inp.value = ''; renderLangList('');
+  setTimeout(() => inp.focus(), 40);
+  document.body.style.overflow = 'hidden';
+}
+function closeLang(){
+  modal().hidden = true;
+  document.getElementById('langOpen').setAttribute('aria-expanded','false');
+  document.body.style.overflow = '';
+}
+
+function pickLang(code, native){
+  closeLang();
+  if(!gt(code)){
+    alert('Auto-translate needs the page to be online (hosted). It will not run from a local file.');
+    return;
+  }
+  currentLang = {code, native};
+  if(code === 'en'){
+    LANG = 'en'; applyLang(); markLangActive('en');
+  } else {
+    markLangActive(code);
+    document.getElementById('langCurrent').textContent = native;
+  }
+  try { localStorage.setItem(LS_KEY, code); } catch(e){}
+  document.querySelectorAll('.notranslate').forEach(n => n.setAttribute('translate','no'));
+}
+
+document.querySelectorAll('.lang button[data-lang]').forEach(b => {
+  b.addEventListener('click', () => {
+    LANG = b.dataset.lang;
+    currentLang = {code: LANG, native: LANG === 'hi' ? 'हिन्दी' : 'English'};
+    if(gtActive){ gt('en'); gtActive = false; }
+    try { localStorage.setItem(LS_KEY, LANG); } catch(e){}
+    applyLang();
+    markLangActive(LANG);
+  });
+});
+
+document.getElementById('langOpen').addEventListener('click', openLang);
+document.getElementById('langClose').addEventListener('click', closeLang);
+document.getElementById('langSearch').addEventListener('input', e => renderLangList(e.target.value));
+modal().addEventListener('click', e => { if(e.target === modal()) closeLang(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && !modal().hidden) closeLang(); });
+
+applyLang();
+</script>
+</body>
+</html>
